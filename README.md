@@ -46,4 +46,3 @@ $ python app.py    # serve flask app
 
 
 
-# HousingPricePredictor
