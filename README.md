@@ -32,6 +32,18 @@ contains only numerical features, as the ocean_proximity feature is removed. The
 
 
 
+| Features      | Description   | Description   | 
+| ------------- |:-------------|-------------:|
+| longitude     | A measure of how far west a house is; a higher value is farther west | -118|
+| latitude      | A measure of how far north a house is; a higher value is farther north     |34 |  
+| housingMedianAge | Median age of a house within a block; a lower number is a newer building      | 29|
+| totalRooms     | Total number of rooms within a block | 2127 |
+| totalBedrooms     | Total number of bedrooms within a block     | 435|  
+| population | Total number of people residing within a block      | 1166|  
+| households     | Total number of households, a group of people residing within a home unit, for a block |409 | 
+| medianIncome      | Median income for households within a block of houses (measured in tens of thousands of US Dollars)     | 3.5 |
+| medianHouseValue | Median house value for households within a block (measured in US Dollars)     |179700 |   
+
 ## Installation
 
 Create the virtual environent using conda. 

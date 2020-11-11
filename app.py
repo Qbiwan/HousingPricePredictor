@@ -16,14 +16,14 @@ def main():
     if request.method == "POST":
 
         inputs = {}
-        inputs['MedInc'] = request.form['MedInc']
-        inputs['HouseAge'] = request.form['HouseAge']
-        inputs['AveRooms'] = request.form['AveRooms']
-        inputs['AveBedrms'] = request.form['AveBedrms']
-        inputs['Population'] = request.form['Population']
-        inputs['AveOccup'] = request.form['AveOccup']
-        inputs['Latitude'] = request.form['Latitude']
-        inputs['Longitude'] = request.form['Longitude']
+        inputs['medianIncome'] = request.form['medianIncome']
+        inputs['housingMedianAge'] = request.form['housingMedianAge']
+        inputs['totalRooms'] = request.form['totalRooms']
+        inputs['totalBedrooms'] = request.form['totalBedrooms']
+        inputs['population'] = request.form['population']
+        inputs['households'] = request.form['households']
+        inputs['latitude'] = request.form['latitude']
+        inputs['longitude'] = request.form['longitude']
 
         preds = predict(
             model=model,
@@ -40,19 +40,20 @@ def main():
 def predict(model, scaler, inputs):
 
     data = [[
-             inputs['MedInc'],
-             inputs['HouseAge'],
-             inputs['AveRooms'],
-             inputs['AveBedrms'],
-             inputs['Population'],
-             inputs['AveOccup'],
-             inputs['Latitude'],
-             inputs['Longitude']
+             inputs['medianIncome'],
+             inputs['housingMedianAge'],
+             inputs['totalRooms'],
+             inputs['totalBedrooms'],
+             inputs['population'],
+             inputs['households'],
+             inputs['latitude'],
+             inputs['longitude']
             ]]
     data = scaler.transform(data)
     prediction = model.predict(data)
+    prediction = int(prediction.item()*1e04)
 
-    return prediction.item()
+    return prediction
 
 
 if __name__ == '__main__':
