@@ -23,6 +23,8 @@ Housing_Price_Predictor
 ![Demo](Demo/Demo.gif)
 
 
+A live version deployed on Heroku can be found [here](https://california-housing-predict.herokuapp.com/).
+
 ## Data
 
 * The [`California Housing Dataset`](https://scikit-learn.org/stable/datasets/index.html#california-housing-dataset) from sklearn 
