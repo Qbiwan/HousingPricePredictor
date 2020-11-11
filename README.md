@@ -32,8 +32,8 @@ contains only numerical features, as the ocean_proximity feature is removed. The
 
 
 
-| Features      | Description   | Description   | 
-| ------------- |:-------------|-------------:|
+| Features      | Description   | Median Value   | 
+| ------------- |:-------------|:-------------:|
 | longitude     | A measure of how far west a house is; a higher value is farther west | -118|
 | latitude      | A measure of how far north a house is; a higher value is farther north     |34 |  
 | housingMedianAge | Median age of a house within a block; a lower number is a newer building      | 29|
