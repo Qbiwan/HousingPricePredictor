@@ -1,64 +1,95 @@
 <!doctype html>
 <html>
-<style>
-form {
-    margin: auto;
-    width:35%
-}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>California Housing Prices Prediction</title>    
 
-.result {
-    margin: auto;
-    width: 35%;
-    border: 1px solid #ccc;
-}
-</style> 
+    <!-- Bootstrap core CSS -->
+<link href="../static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
 
 
-<head>
-    <title>California Housing Prices Prediction</title>
-</head>
-<h1>California Housing Prices Prediction</h1>
-<h2>Please enter housing details below:</h2>
-<form action="{{ url_for("main")}}" method="POST">
-    <fieldset>
-        <legend>Input values:</legend>
-        Median income (US$10,000):
-        <input name="medianIncome" type="number" step="0.1" value="3.5", required>
-        <br>
-        <br> Housing median age:
-        <input name="housingMedianAge" type="number" step="1" value="29", required>
-        <br>
-        <br> Total number of rooms within a block:
-        <input name="totalRooms" type="number" step="1" value="2127", required>
-        <br>
-        <br> Total number of bedrooms within a block:
-        <input name="totalBedrooms" type="number" step="1" value="435", required>
-        <br>
-        <br> Total number of people residing within a block:
-        <input name="population" type="number" step="1" value="1166", required>
-        <br>
-        <br> Total number of households:
-        <input name="households" type="number" step="1" value="409", required>
-        <br>
-        <br> Latitude:
-        <input name="latitude" type="number" step="1" value="34", required>
-        <br>
-        <br> Longitude:
-        <input name="longitude" type="number" step="1" value="-118", required>
-        <br>
-        <input type="submit" value="Predict">
-    </fieldset>
-</form> 
-<br>
-<div class="result" align="center">
-    {% if preds%}
-        <h1>Thank You. Here is the Information You Submited:</h1>
-        {% for key, value in inputs.items() %}
-            <b>{{key}}</b> : {{value}} <br>
-        {%endfor%}
-        <br>
-        <br> The predicted median house value is:
-            <p style="font-size:50px">US$ {{ preds}}</p>
-    {% endif%}        
-</div>
+<body class="text-center">
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h1 class="masthead-brand">California Housing Prices Prediction</h1>
+        <nav class="nav nav-masthead justify-content-center">
+        </nav>
+      </div>
+      <br>
+      <br>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; 
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template --> 
+    <link href="../static/css/form_upload.css" rel="stylesheet">
+  </head>
+  
+<div class="row">
+<div class="col-sm-8" style="background-color:lavender;">
+  <form class="form-upload" action="{{ url_for("main")}}" method="POST"> 
+            <h3 class="h3 mb-3 font-weight-normal">Please enter housing details below:</h3>          
+            Median income (US$10,000):
+            <input name="medianIncome" class="form-control" type="number" step="0.1" value="3.5", required>
+            Housing median age:
+            <input name="housingMedianAge" class="form-control" type="number" step="1" value="29", required>
+            Total number of rooms within a block:
+            <input name="totalRooms" class="form-control" type="number" step="1" value="2127", required>
+            Total number of bedrooms within a block:
+            <input name="totalBedrooms" class="form-control" type="number" step="1" value="435", required>
+            Total number of people residing within a block:
+            <input name="population" class="form-control" type="number" step="1" value="1166", required>
+            Total number of households:
+            <input name="households" class="form-control" type="number" step="1" value="409", required>
+            Latitude:
+            <input name="latitude" class="form-control" type="number" step="1" value="34", required>
+            Longitude:
+            <input name="longitude" class="form-control" type="number" step="1" value="-118", required>
+            <br><br><br>           
+            <button class="btn btn-lg btn-primary btn-block" type="submit"> Predict</button>
+
+    </form> 
+  </div>
+    <br>
+    <div class="col-sm-4" style="background-color:lavenderblush;">
+
+    
+        {% if preds%}
+            <h5>Here is the Information You Submitted:</h5>
+            {% for key, value in inputs.items() %}
+                <b>{{key}}</b> : {{value}} <br>
+            {%endfor%}
+            <br>
+            <br> The predicted median house value is:
+                <p style="font-size:30px">US$ {{ preds}}</p>
+        {% endif%}        
+    </div>
+  </div>
+</body>  
 </html>
