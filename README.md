@@ -11,6 +11,8 @@ Housing_Price_Predictor
 │     └── Demo.gif 
 ├── templates                               
 │     └── main.html
+├── static                               
+│     └── *.css                                  <- css for main.html
 ├── app.py                                       <- flask app                                    
 ├── train.py                                     <- train keras model
 ├── Procfile                                     <- commands to be executed by heroku on app startup 
