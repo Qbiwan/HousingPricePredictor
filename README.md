@@ -52,7 +52,7 @@ Create the virtual environent using conda.
 
 ```bash
 $ conda env create -f environment.yml
-$ conda activate Housing_Price_Predictor
+$ conda activate HousingPricePredictor
 
 # then run the python scripts
 $ cd src
