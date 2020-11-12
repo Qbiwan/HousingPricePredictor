@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>California Housing Prices Prediction</title>    
+    <title>California Housing Price Predictor</title>    
 
     <!-- Bootstrap core CSS -->
 <link href="../static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
@@ -81,12 +81,12 @@
 
     
         {% if preds%}
-            <h5>Here is the Information You Submitted:</h5>
+            <h5>Housing Details Submitted:</h5>
             {% for key, value in inputs.items() %}
                 <b>{{key}}</b> : {{value}} <br>
             {%endfor%}
             <br>
-            <br> The predicted median house value is:
+            <br> The predicted median housing value:
                 <p style="font-size:30px">US$ {{ preds}}</p>
         {% endif%}        
     </div>

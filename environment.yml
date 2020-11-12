@@ -1,4 +1,4 @@
-name: Housing_Price_Predictor
+name: HousingPricePredictor
 channels:
   - defaults
 dependencies:

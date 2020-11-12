@@ -1,4 +1,4 @@
-# Housing Price Predictor
+# California Housing Price Predictor
 
 ## Directory
 
@@ -11,19 +11,19 @@ Housing_Price_Predictor
 │     └── Demo.gif 
 ├── templates                               
 │     └── main.html
-├── app.py                                  
-├── train.py                                
-├── Procfile                              
-├── environment.yml                               
-├── requirements.txt                               
+├── app.py                                       <- flask app                                    
+├── train.py                                     <- train keras model
+├── Procfile                                     <- commands to be executed by heroku on app startup 
+├── environment.yml                              <- conda environment 
+├── requirements.txt                             <- heroku app dependencies  
 └── README.md
 ```
 ## Demo
 
-![Demo](Demo/Demo.gif)
+![Demo](Demo/demo.gif)
 
 
-A live version deployed on Heroku can be found [here](https://california-housing-predict.herokuapp.com/).
+A live version of the app deployed on Heroku can be found [HERE](https://california-housing-predict.herokuapp.com/).
 
 ## Data
 
@@ -54,7 +54,7 @@ $ conda activate Housing_Price_Predictor
 
 # then run the python scripts
 $ cd src
-$ python train.py
+$ python train.py  # train keras model
 $ python app.py    # serve flask app
 ```
 
